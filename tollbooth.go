@@ -8,9 +8,9 @@ import (
 	"fmt"
 	"math"
 
-	"github.com/didip/tollbooth/v5/errors"
-	"github.com/didip/tollbooth/v5/libstring"
-	"github.com/didip/tollbooth/v5/limiter"
+	"github.com/didip/tollbooth/errors"
+	"github.com/didip/tollbooth/libstring"
+	"github.com/didip/tollbooth/limiter"
 )
 
 // setResponseHeaders configures X-Rate-Limit-Limit and X-Rate-Limit-Duration
@@ -129,7 +129,7 @@ func BuildKeys(lmt *limiter.Limiter, r *http.Request) [][]string {
 			sliceKeys = append(sliceKeys, []string{remoteIP, path, method, header[0], header[1], contextValue[0], contextValue[1], usernameToLimit})
 		}
 	}
-	
+
 	return sliceKeys
 }
 
