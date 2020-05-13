@@ -1,4 +1,4 @@
-module github.com/didip/tollbooth/v5
+module github.com/logicwonder/tollbooth/v5
 
 go 1.12
 

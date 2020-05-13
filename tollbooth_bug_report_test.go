@@ -6,10 +6,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/didip/tollbooth/limiter"
+	"github.com/logicwonder/tollbooth/limiter"
 )
 
-// See: https://github.com/didip/tollbooth/issues/48
+// See: https://github.com/logicwonder/tollbooth/issues/48
 func Test_Issue48_RequestTerminatedEvenOnLowVolumeOnSameIP(t *testing.T) {
 	lmt := limiter.New(nil).SetMax(20)
 	lmt.SetMethods([]string{"GET"})
@@ -67,7 +67,7 @@ func issue66RateLimiter(h http.HandlerFunc, customerIDs []string) (http.HandlerF
 	return handler, allocationLimiter
 }
 
-// See: https://github.com/didip/tollbooth/issues/66
+// See: https://github.com/logicwonder/tollbooth/issues/66
 func Test_Issue66_CustomRateLimitByHeaderValues(t *testing.T) {
 	customerID1 := "1234"
 	customerID2 := "5678"
