@@ -17,8 +17,8 @@ import (
 func setResponseHeaders(lmt *limiter.Limiter, w http.ResponseWriter, r *http.Request) {
 	w.Header().Add("X-Rate-Limit-Limit", fmt.Sprintf("%.2f", lmt.GetMax()))
 	w.Header().Add("X-Rate-Limit-Duration", "1")
-	w.Header().Add("X-Rate-Limit-Request-Forwarded-For", r.Header.Get("X-Forwarded-For"))
-	w.Header().Add("X-Rate-Limit-Request-Remote-Addr", r.RemoteAddr)
+	//w.Header().Add("X-Rate-Limit-Request-Forwarded-For", r.Header.Get("X-Forwarded-For"))
+	//w.Header().Add("X-Rate-Limit-Request-Remote-Addr", r.RemoteAddr)
 }
 
 // NewLimiter is a convenience function to limiter.New.
